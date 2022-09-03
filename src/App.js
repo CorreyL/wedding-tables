@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import {
+  useEffect,
+  useRef,
+} from 'react';
+
 import './App.css';
+import NameInput from './components/NameInput';
 
 function App() {
+  const textInputRef = useRef(null);
+
+  useEffect(() => {
+    if (!textInputRef && !textInputRef.current) {
+      return;
+    }
+    // Focus the Text Input when the app is fully instantiated
+    textInputRef.current.focus();
+  }, [textInputRef]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NameInput
+        textInputRef={textInputRef}
+      />
     </div>
   );
 }
