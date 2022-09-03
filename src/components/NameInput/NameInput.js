@@ -7,6 +7,7 @@ import {
 const NameInput = ({
   textInputRef,
   guestList,
+  setNameSelected,
 }) => {
   // Flatten the array of arrays into an array of strings
   const searchableGuestList = [].concat.apply([], Object.values(guestList));
