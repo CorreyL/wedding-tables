@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import TextField from '@mui/material/TextField';
+import {
+  Button,
+  TextField,
+} from '@mui/material';
 
 const NameInput = ({
   textInputRef,
@@ -22,14 +25,27 @@ const NameInput = ({
   };
 
   return (
-    <TextField
-      label="Your Name"
-      variant="outlined"
-      color="success"
-      inputRef={textInputRef}
-      onChange={onChange}
-      focused
-    />
+    <div>
+      <TextField
+        label="Your Name"
+        variant="outlined"
+        color="success"
+        inputRef={textInputRef}
+        onChange={onChange}
+        focused
+      />
+      <div>
+        {searchMatches.map((name, idx) => (
+          <div key={`searchResult${idx}`}>
+            <Button
+              variant="outlined"
+            >
+              {name}
+            </Button>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
