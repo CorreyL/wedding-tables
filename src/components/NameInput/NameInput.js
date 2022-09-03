@@ -40,6 +40,7 @@ const NameInput = ({
           <div key={`searchResult${idx}`}>
             <Button
               variant="outlined"
+              onClick={() => {setNameSelected(name)}}
             >
               {name}
             </Button>
