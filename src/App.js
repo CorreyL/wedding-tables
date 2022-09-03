@@ -5,6 +5,7 @@ import {
 
 import './App.css';
 import NameInput from './components/NameInput';
+import guestList from './guest-list.json';
 
 function App() {
   const textInputRef = useRef(null);
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       <NameInput
         textInputRef={textInputRef}
+        guestList={guestList}
       />
     </div>
   );
