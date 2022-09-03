@@ -27,7 +27,7 @@ const NameInput = ({
   return (
     <div>
       <TextField
-        label="Your Name"
+        label="Your First Name"
         variant="outlined"
         color="success"
         inputRef={textInputRef}
