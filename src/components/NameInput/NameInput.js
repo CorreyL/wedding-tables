@@ -29,7 +29,19 @@ const NameInput = ({
   if (nameSelected) {
     return (
       <div>
-        {`Hello ${nameSelected}, thanks for attending!`}
+        <div>{`Hello ${nameSelected}, thanks for attending!`}</div>
+        <div>{`Not ${nameSelected}?`}</div>
+        <div>
+          <Button
+            variant="outlined"
+            color="error"
+            onClick={() => {
+              setNameSelected(null);
+            }}
+          >
+            {`Click here to reset your name`}
+          </Button>
+        </div>
       </div>
     );
   }
