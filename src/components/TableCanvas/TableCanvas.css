@@ -33,3 +33,7 @@
 .vertical-rectangle + .vertical-rectangle {
   margin-left: 30%;
 }
+
+.person-table {
+  background-color: #00FF00;
+}

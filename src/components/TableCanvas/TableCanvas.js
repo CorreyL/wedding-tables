@@ -19,8 +19,16 @@ const TableCanvas = ({
       const rightTableNumber = tableNumbers[1];
       elementsToRender.push(
         <div className="guest-row" key={`guest-row-${rightTableNumber-1}`}>
-          <div className="vertical-rectangle">{leftTableNumber}</div>
-          <div className="vertical-rectangle">{rightTableNumber}</div>
+          <div
+            className={`vertical-rectangle ${personSelected.tableNumber === leftTableNumber ? 'person-table': ''}`}
+          >
+            {leftTableNumber}
+          </div>
+          <div
+            className={`vertical-rectangle ${personSelected.tableNumber === rightTableNumber ? 'person-table' : ''}`}
+          >
+            {rightTableNumber}
+          </div>
         </div>
       )
       tableNumbers.shift();
