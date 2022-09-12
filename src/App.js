@@ -26,6 +26,7 @@ function App() {
       <NameInput
         textInputRef={textInputRef}
         guestList={guestList}
+        nameSelected={nameSelected}
         setNameSelected={setNameSelected}
       />
       <TableCanvas

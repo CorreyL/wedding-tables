@@ -7,6 +7,7 @@ import {
 const NameInput = ({
   textInputRef,
   guestList,
+  nameSelected,
   setNameSelected,
 }) => {
   // Flatten the array of arrays into an array of strings
@@ -24,6 +25,14 @@ const NameInput = ({
       name.toLowerCase().includes(value.toLowerCase())
     )));
   };
+
+  if (nameSelected) {
+    return (
+      <div>
+        {`Hello ${nameSelected}, thanks for attending!`}
+      </div>
+    );
+  }
 
   return (
     <div>
