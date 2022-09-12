@@ -31,6 +31,7 @@ function App() {
       />
       <TableCanvas
         personSelected={personSelected}
+        guestList={guestList}
       />
     </div>
   );
