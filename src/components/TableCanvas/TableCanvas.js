@@ -2,9 +2,9 @@ import * as React from 'react';
 import './TableCanvas.css';
 
 const TableCanvas = ({
-  nameSelected
+  personSelected
 }) => {
-  if (!nameSelected) {
+  if (!personSelected) {
     return null;
   }
 

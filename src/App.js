@@ -10,7 +10,7 @@ import TableCanvas from './components/TableCanvas';
 import guestList from './guest-list.json';
 
 function App() {
-  const [nameSelected, setNameSelected] = useState(null);
+  const [personSelected, setPersonSelected] = useState(null);
   const textInputRef = useRef(null);
 
   useEffect(() => {
@@ -26,11 +26,11 @@ function App() {
       <NameInput
         textInputRef={textInputRef}
         guestList={guestList}
-        nameSelected={nameSelected}
-        setNameSelected={setNameSelected}
+        personSelected={personSelected}
+        setPersonSelected={setPersonSelected}
       />
       <TableCanvas
-        nameSelected={nameSelected}
+        personSelected={personSelected}
       />
     </div>
   );

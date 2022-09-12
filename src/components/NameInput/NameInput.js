@@ -7,11 +7,19 @@ import {
 const NameInput = ({
   textInputRef,
   guestList,
-  nameSelected,
-  setNameSelected,
+  personSelected,
+  setPersonSelected,
 }) => {
   // Flatten the array of arrays into an array of strings
-  const searchableGuestList = [].concat.apply([], Object.values(guestList));
+  const searchableGuestList = [].concat.apply(
+    [],
+    Object.keys(guestList).map(tableNumber => (
+      guestList[tableNumber].map(name => ({
+        tableNumber,
+        name,
+      }))
+    )),
+  );
 
   const [searchMatches, setSearchMatches] = useState([]);
 
@@ -21,22 +29,22 @@ const NameInput = ({
       setSearchMatches([]);
       return;
     }
-    setSearchMatches(searchableGuestList.filter(name => (
-      name.toLowerCase().includes(value.toLowerCase())
+    setSearchMatches(searchableGuestList.filter(personObj => (
+      personObj.name.toLowerCase().includes(value.toLowerCase())
     )));
   };
 
-  if (nameSelected) {
+  if (personSelected) {
     return (
       <div>
-        <div>{`Hello ${nameSelected}, thanks for attending!`}</div>
-        <div>{`Not ${nameSelected}?`}</div>
+        <div>{`Hello ${personSelected.name}, thanks for attending!`}</div>
+        <div>{`Not ${personSelected.name}?`}</div>
         <div>
           <Button
             variant="outlined"
             color="error"
             onClick={() => {
-              setNameSelected(null);
+              setPersonSelected(null);
             }}
           >
             {`Click here to reset your name`}
@@ -57,16 +65,16 @@ const NameInput = ({
         focused
       />
       <div>
-        {searchMatches.map((name, idx) => (
+        {searchMatches.map((personObj, idx) => (
           <div key={`searchResult${idx}`}>
             <Button
               variant="outlined"
               onClick={() => {
-                setNameSelected(name);
+                setPersonSelected(personObj);
                 setSearchMatches([]);
               }}
             >
-              {name}
+              {personObj.name}
             </Button>
           </div>
         ))}
