@@ -1,0 +1,35 @@
+.parent {
+  width: 100%;
+  height: 20em;
+}
+
+.head-row {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+.horizontal-rectangle {
+  width: 30%;
+  background-color: #555;
+}
+
+.guest-row {
+  display: flex;
+  justify-content: center;
+  height: 30%;
+}
+
+.guest-row + .guest-row {
+  margin-top: 1em;
+}
+
+.vertical-rectangle {
+  height: auto;
+  width: 10%;
+  background-color: #555;
+}
+
+.vertical-rectangle + .vertical-rectangle {
+  margin-left: 30%;
+}
