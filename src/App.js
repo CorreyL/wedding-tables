@@ -7,6 +7,7 @@ import {
 import './App.css';
 import NameInput from './components/NameInput';
 import TableCanvas from './components/TableCanvas';
+import TableList from './components/TableList';
 import guestList from './guest-list.json';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         personSelected={personSelected}
         guestList={guestList}
       />
+      <TableList/>
     </div>
   );
 }
