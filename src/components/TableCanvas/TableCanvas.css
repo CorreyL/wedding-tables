@@ -21,7 +21,7 @@
 }
 
 .guest-row + .guest-row {
-  margin-top: 1em;
+  margin-top: 0.25em;
 }
 
 .vertical-rectangle {
