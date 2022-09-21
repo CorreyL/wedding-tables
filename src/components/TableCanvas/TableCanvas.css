@@ -35,5 +35,9 @@
 }
 
 .person-table {
-  background-color: #00FF00;
+  background-color: #4CBB17;
+}
+
+.table-selected {
+  background-color: #FFBF00;
 }

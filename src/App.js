@@ -35,6 +35,7 @@ function App() {
       <TableCanvas
         personSelected={personSelected}
         guestList={guestList}
+        tableSelected={tableSelected}
         setTableSelected={setTableSelected}
       />
       <TableList

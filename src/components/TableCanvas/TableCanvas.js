@@ -4,6 +4,7 @@ import './TableCanvas.css';
 const TableCanvas = ({
   guestList,
   personSelected,
+  tableSelected,
   setTableSelected,
 }) => {
   if (!personSelected) {
@@ -21,13 +22,13 @@ const TableCanvas = ({
       elementsToRender.push(
         <div className="guest-row" key={`guest-row-${rightTableNumber-1}`}>
           <div
-            className={`vertical-rectangle ${personSelected.tableNumber === leftTableNumber ? 'person-table': ''}`}
+            className={`vertical-rectangle ${personSelected.tableNumber === leftTableNumber ? 'person-table': ''} ${tableSelected === leftTableNumber && personSelected.tableNumber !== tableSelected ? 'table-selected' : ''}`}
             onClick={() => {setTableSelected(leftTableNumber)}}
           >
             {leftTableNumber}
           </div>
           <div
-            className={`vertical-rectangle ${personSelected.tableNumber === rightTableNumber ? 'person-table' : ''}`}
+            className={`vertical-rectangle ${personSelected.tableNumber === rightTableNumber ? 'person-table' : ''} ${tableSelected === rightTableNumber && personSelected.tableNumber !== tableSelected ? 'table-selected' : ''}`}
             onClick={() => {setTableSelected(rightTableNumber)}}
           >
             {rightTableNumber}
@@ -43,7 +44,12 @@ const TableCanvas = ({
   return (
     <div className="parent">
       <div className="head-row">
-        <div className="horizontal-rectangle" onClick={() => {setTableSelected(0)}}>0</div>
+        <div
+          className={`horizontal-rectangle ${tableSelected === 0 ? 'table-selected' : ''}`}
+          onClick={() => {setTableSelected(0)}}
+        >
+          0
+        </div>
       </div>
       {guestRowsRendering()}
     </div>
