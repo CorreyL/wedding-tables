@@ -71,7 +71,7 @@ const NameInput = ({
       />
       <div>
         {searchMatches.map((personObj, idx) => (
-          <div key={`searchResult${idx}`}>
+          <div className='options-parent' key={`searchResult${idx}`}>
             <Button
               variant="outlined"
               onClick={() => {
