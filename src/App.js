@@ -34,7 +34,10 @@ function App() {
         personSelected={personSelected}
         guestList={guestList}
       />
-      <TableList/>
+      <TableList
+        personSelected={personSelected}
+        guestList={guestList}
+      />
     </div>
   );
 }
