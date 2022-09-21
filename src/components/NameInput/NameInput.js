@@ -9,6 +9,7 @@ const NameInput = ({
   guestList,
   personSelected,
   setPersonSelected,
+  setTableSelected,
 }) => {
   // Flatten the array of arrays into an array of strings
   const searchableGuestList = [].concat.apply(
@@ -45,6 +46,7 @@ const NameInput = ({
             color="error"
             onClick={() => {
               setPersonSelected(null);
+              setTableSelected(null);
             }}
           >
             {`Click here to reset your name`}

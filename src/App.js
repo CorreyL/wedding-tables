@@ -12,6 +12,7 @@ import guestList from './guest-list.json';
 
 function App() {
   const [personSelected, setPersonSelected] = useState(null);
+  const [tableSelected, setTableSelected] = useState(null);
   const textInputRef = useRef(null);
 
   useEffect(() => {
@@ -29,14 +30,17 @@ function App() {
         guestList={guestList}
         personSelected={personSelected}
         setPersonSelected={setPersonSelected}
+        setTableSelected={setTableSelected}
       />
       <TableCanvas
         personSelected={personSelected}
         guestList={guestList}
+        setTableSelected={setTableSelected}
       />
       <TableList
         personSelected={personSelected}
         guestList={guestList}
+        tableSelected={tableSelected}
       />
     </div>
   );

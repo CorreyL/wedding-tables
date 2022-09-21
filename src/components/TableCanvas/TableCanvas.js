@@ -4,6 +4,7 @@ import './TableCanvas.css';
 const TableCanvas = ({
   guestList,
   personSelected,
+  setTableSelected,
 }) => {
   if (!personSelected) {
     return null;
@@ -21,11 +22,13 @@ const TableCanvas = ({
         <div className="guest-row" key={`guest-row-${rightTableNumber-1}`}>
           <div
             className={`vertical-rectangle ${personSelected.tableNumber === leftTableNumber ? 'person-table': ''}`}
+            onClick={() => {setTableSelected(leftTableNumber)}}
           >
             {leftTableNumber}
           </div>
           <div
             className={`vertical-rectangle ${personSelected.tableNumber === rightTableNumber ? 'person-table' : ''}`}
+            onClick={() => {setTableSelected(rightTableNumber)}}
           >
             {rightTableNumber}
           </div>
@@ -40,7 +43,7 @@ const TableCanvas = ({
   return (
     <div className="parent">
       <div className="head-row">
-        <div className="horizontal-rectangle">0</div>
+        <div className="horizontal-rectangle" onClick={() => {setTableSelected(0)}}>0</div>
       </div>
       {guestRowsRendering()}
     </div>
