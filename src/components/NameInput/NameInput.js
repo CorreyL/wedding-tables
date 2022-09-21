@@ -3,6 +3,7 @@ import {
   Button,
   TextField,
 } from '@mui/material';
+import './NameInput.css';
 
 const NameInput = ({
   textInputRef,
@@ -37,7 +38,9 @@ const NameInput = ({
 
   if (personSelected) {
     return (
-      <div>
+      <div
+        className="name-input"
+      >
         <div>{`Hello ${personSelected.name}, thanks for attending!`}</div>
         <div>{`Not ${personSelected.name}?`}</div>
         <div>
