@@ -45,7 +45,7 @@ const TableCanvas = ({
     <div className="parent">
       <div className="head-row">
         <div
-          className={`horizontal-rectangle ${tableSelected === 0 ? 'table-selected' : ''}`}
+          className={`horizontal-rectangle ${personSelected.tableNumber === '0' ? 'person-table' : ''} ${tableSelected === 0 ? 'table-selected' : ''}`}
           onClick={() => {setTableSelected(0)}}
         >
           0
